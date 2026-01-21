@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:go_router/go_router.dart';
 
 class AnimatedHeader extends ConsumerStatefulWidget {
   final double scrollOffset;
@@ -108,8 +109,8 @@ class _AnimatedHeaderState extends ConsumerState<AnimatedHeader>
                         if (isWide) ...[
                           _buildNavItem('Home', 0, true, null),
                           _buildNavItem('Collection', 1, false, widget.onShopPressed),
-                          _buildNavItem('About', 2, false, null),
-                          _buildNavItem('Contact', 3, false, null),
+                          _buildNavItem('About', 2, false, () => context.push('/about')),
+                          _buildNavItem('Contact', 3, false, () => context.push('/contact')),
                           const SizedBox(width: 24),
                         ],
                         // CTA Button with glow effect

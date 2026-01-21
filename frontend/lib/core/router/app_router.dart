@@ -5,6 +5,8 @@ import '../../features/auth/application/auth_notifier.dart';
 import '../../features/home/home_screen.dart';
 import '../../features/auth/presentation/login_screen.dart';
 import '../../features/shop/presentation/product_listing_screen.dart';
+import '../../features/about/presentation/about_screen.dart';
+import '../../features/contact/presentation/contact_screen.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   final authState = ref.watch(authNotifierProvider);
@@ -43,6 +45,14 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/shop',
         builder: (context, state) => const ProductListingScreen(),
+      ),
+      GoRoute(
+        path: '/about',
+        builder: (context, state) => const AboutScreen(),
+      ),
+      GoRoute(
+        path: '/contact',
+        builder: (context, state) => const ContactScreen(),
       ),
     ],
   );
